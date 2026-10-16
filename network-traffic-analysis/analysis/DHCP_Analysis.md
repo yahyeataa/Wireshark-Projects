@@ -37,7 +37,7 @@ All four expected message types appear once. The observed session begins at `0.0
 - Request → ACK: **0.314 ms**
 - Start → final ACK: **70.345 ms**
 
-![DHCP DORA packet list](Screenshots/DHCP_Screenshots/04_dora_packet_list.png)
+![DHCP DORA packet list](../Screenshots/DHCP_Screenshots/04_dora_packet_list.png)
 
 ## Addressing and roles
 
@@ -50,7 +50,7 @@ All four expected message types appear once. The observed session begins at `0.0
 
 The client hardware address shown in the DHCP packet details is `00:0b:82:01:fc:42` (`GrandstreamN_01:fc:42` as resolved by Wireshark).
 
-![DHCP IPv4 endpoints](Screenshots/DHCP_Screenshots/02_ipv4_endpoints_dhcp.png)
+![DHCP IPv4 endpoints](../Screenshots/DHCP_Screenshots/02_ipv4_endpoints_dhcp.png)
 
 ## Message-by-message evidence
 
@@ -64,7 +64,7 @@ The client hardware address shown in the DHCP packet details is `00:0b:82:01:fc:
 
 The broadcast is expected because the client has not yet configured an IPv4 address.
 
-![DHCP Discover fields](Screenshots/DHCP_Screenshots/05_discover_packet_details.png)
+![DHCP Discover fields](../Screenshots/DHCP_Screenshots/05_discover_packet_details.png)
 
 ### 2. DHCP Offer
 
@@ -77,7 +77,7 @@ The broadcast is expected because the client has not yet configured an IPv4 addr
 
 This is the server's proposed lease address for the client.
 
-![DHCP Offer fields](Screenshots/DHCP_Screenshots/06_offer_packet_details.png)
+![DHCP Offer fields](../Screenshots/DHCP_Screenshots/06_offer_packet_details.png)
 
 ### 3. DHCP Request
 
@@ -88,7 +88,7 @@ This is the server's proposed lease address for the client.
 
 The Request is broadcast. The packet details identify the same client MAC address seen in the Discover. The capture shows a new transaction ID for the Request/ACK pair, so matching should use the relevant transaction pair and client MAC, not timing alone.
 
-![DHCP Request fields](Screenshots/DHCP_Screenshots/07_request_packet_details.png)
+![DHCP Request fields](../Screenshots/DHCP_Screenshots/07_request_packet_details.png)
 
 ### 4. DHCP ACK
 
@@ -100,7 +100,7 @@ The Request is broadcast. The packet details identify the same client MAC addres
 
 The ACK completes the observed lease acquisition and confirms the assignment of `192.168.0.10`.
 
-![DHCP ACK fields](Screenshots/DHCP_Screenshots/08_ack_packet_details.png)
+![DHCP ACK fields](../Screenshots/DHCP_Screenshots/08_ack_packet_details.png)
 
 ## Protocol composition
 
@@ -114,7 +114,7 @@ Wireshark's protocol hierarchy for the DHCP-filtered packets reports:
 | UDP | 4 | 32 | 2.4% |
 | DHCP | 4 | 1,144 | 87.2% |
 
-![DHCP protocol hierarchy](Screenshots/DHCP_Screenshots/01_protocol_hierarchy_dhcp.png)
+![DHCP protocol hierarchy](../Screenshots/DHCP_Screenshots/01_protocol_hierarchy_dhcp.png)
 
 ## Conversation baseline
 
@@ -125,7 +125,7 @@ Wireshark reports two IPv4 conversations in the filtered view:
 | `0.0.0.0` ↔ `255.255.255.255` | 2 | 628 B | Client broadcasts Discover and Request |
 | `192.168.0.1` ↔ `192.168.0.10` | 2 | 684 B | Server sends Offer and ACK |
 
-![DHCP IPv4 conversations](Screenshots/DHCP_Screenshots/03_ipv4_conversations_dhcp.png)
+![DHCP IPv4 conversations](../Screenshots/DHCP_Screenshots/03_ipv4_conversations_dhcp.png)
 
 ## Baseline conclusion
 

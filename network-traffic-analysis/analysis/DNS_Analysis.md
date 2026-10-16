@@ -42,7 +42,7 @@ The shared transaction ID and reversed IP/UDP tuple correlate the response to th
 | Questions | 1 |
 | UDP ports | 65282 → 65333 |
 
-![DNS query details](Screenshots/DNS_Screenshots/04_dns_query_details.png)
+![DNS query details](../Screenshots/DNS_Screenshots/04_dns_query_details.png)
 
 ## Response analysis
 
@@ -59,7 +59,7 @@ The shared transaction ID and reversed IP/UDP tuple correlate the response to th
 
 The packet-list summary visibly includes A-record addresses such as `67.129.68.9`, `69.44.57.60`, and `207.234.209.181`. The full response contains multiple records, which is expected for an NTP pool hostname.
 
-![DNS response details](Screenshots/DNS_Screenshots/05_dns_response_details.png)
+![DNS response details](../Screenshots/DNS_Screenshots/05_dns_response_details.png)
 
 ## DNS statistics baseline
 
@@ -80,7 +80,7 @@ Wireshark's DNS statistics window reports the following for the two-packet sampl
 
 The record-type counters include records present across the decoded DNS messages (including additional and authority sections), while the response packet itself reports 15 answer RRs, 6 authority RRs, and 2 additional RRs.
 
-![DNS statistics](Screenshots/DNS_Screenshots/03_dns_statistics.png)
+![DNS statistics](../Screenshots/DNS_Screenshots/03_dns_statistics.png)
 
 ## Endpoint and protocol profile
 
@@ -91,9 +91,9 @@ The record-type counters include records present across the decoded DNS messages
 
 At the protocol level, the two packets total 615 bytes: Ethernet contributes 28 B, IPv4 40 B, UDP 16 B, and DNS 531 B (**86.3%** of bytes).
 
-![DNS IPv4 endpoints](Screenshots/DNS_Screenshots/02_ipv4_endpoints_dns.png)
+![DNS IPv4 endpoints](../Screenshots/DNS_Screenshots/02_ipv4_endpoints_dns.png)
 
-![DNS protocol hierarchy](Screenshots/DNS_Screenshots/01_protocol_hierarchy_dns.png)
+![DNS protocol hierarchy](../Screenshots/DNS_Screenshots/01_protocol_hierarchy_dns.png)
 
 ## Important observation: non-standard UDP port
 
